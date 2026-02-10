@@ -1,6 +1,22 @@
 "use client";
 
-import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
+import {
+  Menu,
+  User,
+  ShoppingCart,
+  Search,
+  Home as HomeIcon,
+  Armchair,
+  Link2,
+  Footprints,
+  FlaskConical,
+  Shirt,
+  LifeBuoy,
+  Mail,
+  Activity,
+  FileText,
+  Heart,
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -26,6 +42,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import React from "react";
 
 interface MenuItem {
   title: string;
@@ -59,40 +76,45 @@ interface Navbar1Props {
 
 const Navbar1 = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
+    url: "/",
     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
     alt: "logo",
-    title: "Shadcnblocks.com",
+    title: "EquusShop",
   },
   menu = [
-    { title: "Home", url: "#" },
+    { title: "Home", url: "/" },
     {
-      title: "Products",
+      title: "Productos",
       url: "#",
       items: [
         {
-          title: "Blog",
-          description: "The latest industry news, updates, and info",
-          icon: <Book className="size-5 shrink-0" />,
+          title: "Monturas",
+          description: "Sillas, cinchas y accesorios de montura",
+          icon: <Armchair className="size-5 shrink-0" />,
           url: "#",
         },
         {
-          title: "Company",
-          description: "Our mission is to innovate and empower the world",
-          icon: <Trees className="size-5 shrink-0" />,
+          title: "Bridones",
+          description: "Bocados y cabezadas",
+          icon: <Link2 className="size-5 shrink-0" />,
           url: "#",
         },
         {
-          title: "Careers",
-          description: "Browse job listing and discover our workspace",
-          icon: <Sunset className="size-5 shrink-0" />,
+          title: "Estribos",
+          description: "Estribos y accesorios",
+          icon: <Footprints className="size-5 shrink-0" />,
           url: "#",
         },
         {
-          title: "Support",
-          description:
-            "Get in touch with our support team or visit our community forums",
-          icon: <Zap className="size-5 shrink-0" />,
+          title: "Comida / Suplementos",
+          description: "Vitaminas y suplementos nutricionales",
+          icon: <FlaskConical className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Ropa técnica",
+          description: "Indumentaria para entrenamiento y competición",
+          icon: <Shirt className="size-5 shrink-0" />,
           url: "#",
         },
       ],
@@ -103,36 +125,32 @@ const Navbar1 = ({
       items: [
         {
           title: "Help Center",
-          description: "Get all the answers you need right here",
-          icon: <Zap className="size-5 shrink-0" />,
+          description: "Respuestas a preguntas frecuentes",
+          icon: <LifeBuoy className="size-5 shrink-0" />,
           url: "#",
         },
         {
           title: "Contact Us",
-          description: "We are here to help you with any questions you have",
-          icon: <Sunset className="size-5 shrink-0" />,
+          description: "Soporte y consultas",
+          icon: <Mail className="size-5 shrink-0" />,
           url: "#",
         },
         {
           title: "Status",
-          description: "Check the current status of our services and APIs",
-          icon: <Trees className="size-5 shrink-0" />,
+          description: "Estado de servicios y APIs",
+          icon: <Activity className="size-5 shrink-0" />,
           url: "#",
         },
         {
           title: "Terms of Service",
-          description: "Our terms and conditions for using our services",
-          icon: <Book className="size-5 shrink-0" />,
+          description: "Términos y condiciones",
+          icon: <FileText className="size-5 shrink-0" />,
           url: "#",
         },
       ],
     },
     {
       title: "Pricing",
-      url: "#",
-    },
-    {
-      title: "Blog",
       url: "#",
     },
   ],
@@ -144,7 +162,7 @@ const Navbar1 = ({
 }: Navbar1Props) => {
   return (
     <section className={cn("py-4 px-5", className)}>
-      <div className="container">
+      <div className="container w-full">
         {/* Desktop Menu */}
         <nav className="hidden items-center justify-between lg:flex">
           <div className="flex items-center gap-6">
@@ -159,6 +177,7 @@ const Navbar1 = ({
                 {logo.title}
               </span>
             </a>
+
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList>
@@ -167,7 +186,22 @@ const Navbar1 = ({
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex gap-2">
+
+          {/* (Opcional) Acciones rápidas a la derecha */}
+          <div className="absolute right-5 flex items-center gap-2">
+            <Button variant="ghost" size="icon" aria-label="Buscar">
+              <Search className="size-5" />
+            </Button>
+            <Button variant="ghost" size="icon" aria-label="Favoritos">
+              <Heart className="size-5" />
+            </Button>
+            <Button variant="ghost" size="icon" aria-label="Mi cuenta">
+              <User className="size-5" />
+            </Button>
+            <Button size="icon" aria-label="Carrito">
+              <ShoppingCart className="size-5" />
+            </Button>
+            {/* Auth */}
             <Button asChild variant="outline" size="sm">
               <a href={auth.login.url}>{auth.login.title}</a>
             </Button>
@@ -178,8 +212,8 @@ const Navbar1 = ({
         </nav>
 
         {/* Mobile Menu */}
-        <div className="block lg:hidden">
-          <div className="flex items-center justify-between">
+        <div className="block w-full lg:hidden">
+          <div className="inner-container w-full flex items-center justify-between">
             {/* Logo */}
             <a href={logo.url} className="flex items-center gap-2">
               <img
@@ -188,12 +222,14 @@ const Navbar1 = ({
                 alt={logo.alt}
               />
             </a>
+
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" aria-label="Abrir menú">
                   <Menu className="size-4" />
                 </Button>
               </SheetTrigger>
+
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
@@ -206,6 +242,7 @@ const Navbar1 = ({
                     </a>
                   </SheetTitle>
                 </SheetHeader>
+
                 <div className="flex flex-col gap-6 p-4">
                   <Accordion
                     type="single"

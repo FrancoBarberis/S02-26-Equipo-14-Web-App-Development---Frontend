@@ -149,10 +149,6 @@ const Navbar1 = ({
         },
       ],
     },
-    {
-      title: "Pricing",
-      url: "#",
-    },
   ],
   auth = {
     login: { title: "Login", url: "#" },

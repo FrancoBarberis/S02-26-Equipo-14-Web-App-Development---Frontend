@@ -30,7 +30,7 @@ export default function Home() {
             Comprar ahora
           </a>
           <a
-            href="#"
+            href="/products"
             className="px-6 py-3 rounded-md border border-white text-white font-semibold hover:bg-white/10 transition"
           >
             Ver productos

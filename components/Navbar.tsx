@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 import {
   Accordion,
@@ -194,8 +195,10 @@ const Navbar1 = ({
             <Button variant="ghost" size="icon" aria-label="Mi cuenta">
               <User className="size-5" />
             </Button>
-            <Button size="icon" aria-label="Carrito">
-              <ShoppingCart className="size-5" />
+            <Button asChild size="icon" aria-label="Carrito">
+              <Link href="/cart">
+                <ShoppingCart className="size-5" />
+              </Link>
             </Button>
             {/* Auth */}
             <Button asChild variant="outline" size="sm">

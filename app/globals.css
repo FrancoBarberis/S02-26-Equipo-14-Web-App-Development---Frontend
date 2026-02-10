@@ -130,3 +130,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+html, body, #__next {
+  height: 100%;
+}

@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <section className="relative h-[calc(100dvh-64px)] w-full">
+    <section className="relative h-full w-full">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"

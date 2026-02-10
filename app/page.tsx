@@ -12,8 +12,8 @@ export default function Home() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40" />
       {/* Content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center gap-5 text-center text-white px-6">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center gap-5 text-center text-white px-6 lg:items-end">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight lg:text-right">
           Equipamiento Ecuestre de Alto Rendimiento
         </h1>
 

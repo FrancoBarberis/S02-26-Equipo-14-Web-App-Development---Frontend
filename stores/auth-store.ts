@@ -3,14 +3,14 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
-type Role = "guest" | "user" | "admin";
+export type Role = "guest" | "user" | "admin";
 
 export type SessionUser = {
   id: string;
   name: string;
   email: string;
   role: Role;
-  avatarUrl?: string;
+  avatarUrl?: string | null;
 };
 
 type AuthState = {
@@ -36,6 +36,7 @@ export const useAuthStore = create<AuthState & AuthActions>()(
       isAuthenticated: false,
       loading: true, // true hasta que hidrata
 
+      //TODO: realizar una validacion contra el backend, utilizar un service para esto
       login: ({ user, token }) =>
         set({
           user,

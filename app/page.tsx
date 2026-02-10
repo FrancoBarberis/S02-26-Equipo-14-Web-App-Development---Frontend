@@ -12,12 +12,12 @@ export default function Home() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40" />
       {/* Content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center gap-5 text-center text-white px-6 lg:items-end">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center gap-5 text-center text-white px-6 lg:items-end lg:mr-10">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight lg:text-right">
           Equipamiento Ecuestre de Alto Rendimiento
         </h1>
 
-        <p className="mt-4 max-w-2xl text-lg md:text-l text-white/90">
+        <p className="mt-4 max-w-2xl text-lg md:text-l text-white/90 lg:text-right lg:font-semibold">
           Monturas, bridones, estribos y ropa técnica para jinete y caballo.
           Calidad profesional para cada disciplina.
         </p>

@@ -11,7 +11,7 @@ function ProductCard() {
           src={HorseIMG}
           alt="Silla de montar"
           fill
-          className="object-cover"
+          className="object-cover group-hover:scale-105 transition-transform"
           sizes="(min-width: 1024px) 14rem, 100vw"
           priority
         />
@@ -26,13 +26,13 @@ function ProductCard() {
           </button>
         </div>
 
-        <span className="absolute bottom-2 left-2 rounded bg-emerald-600 px-2 py-0.5 text-xs text-white cursor-default uppercase">
+        <span className="absolute bottom-2 left-2 rounded bg-emerald-600/60 px-2 py-0.5 text-xs text-white cursor-default uppercase">
           In stock
         </span>
       </div>
 
       <div className="mt-1 px-3 py-2">
-        <h3 className="product-title text-xs font-semibold uppercase">Silla de montar</h3>
+        <h3 className="product-title text-xs font-bold uppercase">Silla de montar</h3>
         <p className="text-xs font-medium text-amber-600">$ 250.000</p>
         <button className="bg-blue-950 mt-3 px-2 py-1 uppercase text-xs cursor-pointer w-full text-white hover:brightness-125 transition-transform">Add to cart</button>
       </div>

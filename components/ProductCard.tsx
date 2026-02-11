@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HorseIMG from "../public/HorseHero.jpg";
-import { Eye } from "lucide-react";
+import { Heart } from "lucide-react";
 
 function ProductCard() {
   return (
@@ -18,11 +18,11 @@ function ProductCard() {
 
         {/* Overlay UI (botones sobre la imagen) */}
         <div className="absolute inset-0 flex items-start justify-between p-2">
-          <button className="rounded bg-black/50 px-2 py-1 text-xs text-white cursor-pointer lg:opacity-0 pointer-events-none group-hover:opacity-100 uppercase transition-opacity group-focus-within:opacity-100">
+          {/* <button className="rounded bg-black/50 px-2 py-1 text-xs text-white cursor-pointer lg:opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:brightness-125 uppercase transition-opacity group-focus-within:opacity-100">
             Ampliar
-          </button>
-          <button className="rounded bg-black/50 px-2 py-1 text-xs text-white cursor-pointer lg:opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity group-focus-within:opacity-100">
-            Favorito
+          </button> */}
+          <button className="favourites-button rounded bg-transparent p-0.5 w-fit h-fit aspect-square text-white cursor-pointer lg:opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:bg-black/50 pointer-events-none transition-transform group-focus-within:opacity-100 hover:brightness-125 absolute right-2">
+            <Heart className="lg:opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-transform"/>
           </button>
         </div>
 
@@ -33,8 +33,8 @@ function ProductCard() {
 
       <div className="mt-1 px-3 py-2">
         <h3 className="product-title text-xs font-semibold uppercase">Silla de montar</h3>
-        <p className="text-xs font-medium">$ 250.000</p>
-        <button className="bg-blue-950 mt-3 px-2 py-1 uppercase text-xs cursor-pointer w-full text-white">Add to cart</button>
+        <p className="text-xs font-medium text-amber-600">$ 250.000</p>
+        <button className="bg-blue-950 mt-3 px-2 py-1 uppercase text-xs cursor-pointer w-full text-white hover:brightness-125 transition-transform">Add to cart</button>
       </div>
     </div>
   );

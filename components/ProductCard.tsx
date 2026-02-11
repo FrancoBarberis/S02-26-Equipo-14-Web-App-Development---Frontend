@@ -2,9 +2,13 @@ import Image from "next/image";
 import HorseIMG from "../public/HorseHero.jpg";
 import { Heart } from "lucide-react";
 
+// function handleClick(): void {
+//   //desplegar modal de detalle, implementar que esta card avise al padre que actualice y active el modal 
+// }
+
 function ProductCard() {
   return (
-    <div className="p-0 lg:w-56 rounded-xs bg-white group">
+    <div className="p-0 lg:w-56 rounded-xs bg-white group shadow-lg hover:shadow-2xl transition-shadow">
       {/* Wrapper que RECORTA la imagen */}
       <div className="relative aspect-4/3 w-full overflow-hidden rounded-t-xs bg-muted">
         <Image
@@ -13,7 +17,7 @@ function ProductCard() {
           fill
           className="object-cover group-hover:scale-105 transition-transform"
           sizes="(min-width: 1024px) 14rem, 100vw"
-          priority
+          loading="lazy"
         />
 
         {/* Overlay UI (botones sobre la imagen) */}
@@ -34,7 +38,7 @@ function ProductCard() {
       <div className="mt-1 px-3 py-2">
         <h3 className="product-title text-xs font-bold uppercase">Silla de montar</h3>
         <p className="text-xs font-medium text-amber-600">$ 250.000</p>
-        <button className="bg-blue-950 mt-3 px-2 py-1 uppercase text-xs cursor-pointer w-full text-white hover:brightness-125 transition-transform">Add to cart</button>
+        <button className="add-button bg-blue-950 mt-3 px-2 py-1 uppercase text-xs cursor-pointer w-full text-white hover:brightness-125 transition-transform" >Add to cart</button>
       </div>
     </div>
   );

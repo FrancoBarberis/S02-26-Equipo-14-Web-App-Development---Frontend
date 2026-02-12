@@ -8,7 +8,7 @@ import { Heart } from "lucide-react";
 
 function ProductCard() {
   return (
-    <div className="p-0 lg:w-56 rounded-xs bg-white group shadow-lg hover:shadow-2xl transition-shadow">
+    <div className="p-0 w-40 md:w-52 lg:w-56 rounded-xs bg-white group shadow-lg hover:shadow-2xl transition-shadow">
       {/* Wrapper que RECORTA la imagen */}
       <div className="relative aspect-4/3 w-full overflow-hidden rounded-t-xs bg-muted">
         <Image

@@ -5,6 +5,8 @@ import PersonalInformation from "@/components/ui/profile/user/personal-informati
 import MyOrders from "@/components/ui/profile/user/my-orders";
 import NotFound from "@/app/not-found";
 import MyStableManagement from "@/components/ui/profile/user/my-stable-management";
+import MyFavorites from "@/components/ui/profile/user/favourites/my-favourites";
+import UserAddress from "@/components/ui/profile/user/addresses/user-address";
 
 
 const menuItems = [
@@ -22,17 +24,17 @@ const menuItems = [
   },
   {
     name: "Favoritos", 
-    component: ""
+    component: <MyFavorites />
   },
   {
     name: "Direcciones", 
-    component: ""
+    component: <UserAddress />
   },
 ];
 
 const UserProfilePage = () => {
 
-    const [clicked, setClicked] = useState("");
+    const [clicked, setClicked] = useState("Información Personal");
 
     return (
         <div className="min-h-screen bg-gray-50 flex">

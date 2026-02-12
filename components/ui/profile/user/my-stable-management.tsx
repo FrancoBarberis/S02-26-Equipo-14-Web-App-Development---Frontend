@@ -31,7 +31,7 @@ export default function MyStableManagement() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
           {/* ADD CARD */}
-          <button className="min-h-105 border-2 border-dashed border-primary/20 rounded-xl flex flex-col items-center justify-center hover:bg-primary/5">
+          <button className="min-h-105 border-2 border-dashed border-primary/20 rounded-xl flex flex-col items-center justify-center hover:bg-primary/5 hover:scale-105 transition">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
               <span className="material-icons text-primary text-3xl">add</span>
             </div>

@@ -58,7 +58,7 @@ const PersonalInformation = () => {
             </div>
             </div>
 
-            <button className="mt-8 bg-[#002349] text-white px-8 py-3 font-serif hover:bg-[#003366] transition-all shadow-md active:scale-95 uppercase tracking-widest text-sm">
+            <button className="mt-8 rounded-xl bg-[#002349] text-white px-8 py-3 font-serif hover:bg-[#003366] transition-all shadow-md active:scale-95 uppercase tracking-widest text-sm hover:cursor-pointer hover:scale-105">
             Guardar Cambios
             </button>
         </section>
@@ -72,33 +72,33 @@ const PersonalInformation = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2].map((horse) => (
                 <div
-                key={horse}
-                className="bg-white border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
+                    key={horse}
+                    className="bg-white border border-gray-200 overflow-hidden hover:shadow-md hover:scale-105 hover:cursor-pointer transition-all"
                 >
-                <div className="h-40 bg-gray-200 relative">
-                    <Image
-                    src="/horse-placeholder.jpg"
-                    alt="Caballo"
-                    fill
-                    className="object-cover"
-                    />
-                    <span className="absolute top-2 right-2 bg-[#C1A461] text-white text-[10px] px-2 py-1 uppercase font-bold">
-                    Pura Sangre
-                    </span>
-                </div>
+                    <div className="h-40 bg-gray-200 relative">
+                        <Image
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-InSzZLNb4dQToOg8_oMOAQLrNmHLC0sYSebWoZdO5J5DT4IZFe_XEpbyHo1Rp0LEDIVhGEWRegVRVV6naeZxxKcjXHkeA60Ce_G9Roolf0GLLLEc6O_y7wsnrPIOryHx7867mlcit69gLfpETNS-aY1WY5K39e8PCVhX_7aLJEtfJJPwL9EvoBnooPP6YcAuGJdmZuCmCqjUzXW_Frt12ys1liGenD_HIYcnSpL7Fh6PmMm7lTOXFaN3H2SfoaYI6A2_AKjGjYE"
+                            alt="Caballo"
+                            fill
+                            className="object-cover"
+                        />
+                        <span className="absolute top-2 right-2 bg-[#C1A461] text-white text-[10px] px-2 py-1 uppercase font-bold">
+                        Pura Sangre
+                        </span>
+                    </div>
 
-                <div className="p-4">
-                    <h4 className="font-serif text-lg text-[#002349]">
-                    Noble Spirit
-                    </h4>
-                    <p className="text-sm text-gray-500 italic">
-                    Macho - 5 años
-                    </p>
-                </div>
+                    <div className="p-4">
+                        <h4 className="font-serif text-lg text-[#002349]">
+                        Noble Spirit
+                        </h4>
+                        <p className="text-sm text-gray-500 italic">
+                        Macho - 5 años
+                        </p>
+                    </div>
                 </div>
             ))}
 
-            <button className="border-2 border-dashed border-gray-300 flex flex-col items-center justify-center p-6 text-gray-400 hover:border-[#C1A461] hover:text-[#C1A461] transition-colors">
+            <button className="border-2 border-dashed border-gray-300 flex flex-col items-center justify-center p-6 text-gray-400 hover:border-[#C1A461] hover:text-[#C1A461] hover:cursor-pointer hover:scale-105 transition-all">
                 <span className="text-3xl">+</span>
                 <span className="text-xs uppercase tracking-widest mt-2">
                 Añadir Caballo

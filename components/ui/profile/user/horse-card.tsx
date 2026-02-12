@@ -10,7 +10,7 @@ export default function HorseCard({
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: any) {
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow border border-primary/5 flex flex-col">
+    <div className="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow border border-primary/5 flex flex-col hover:scale-105 transition">
 
       <div className="relative h-65 overflow-hidden">
         <Image 
@@ -45,7 +45,7 @@ export default function HorseCard({
           </div>
         </div>
 
-        <button className="mt-auto py-3 bg-primary text-white rounded-lg text-sm font-bold uppercase">
+        <button className="mt-auto py-3 bg-primary text-white rounded-lg text-sm font-bold uppercase hover:scale-105 transition hover:cursor-pointer">
           View Profile
         </button>
       </div>

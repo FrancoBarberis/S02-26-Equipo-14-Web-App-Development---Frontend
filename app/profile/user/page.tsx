@@ -4,9 +4,9 @@ import { useState } from "react";
 import PersonalInformation from "@/components/ui/profile/user/personal-information";
 import MyOrders from "@/components/ui/profile/user/my-orders";
 import NotFound from "@/app/not-found";
-import MyStableManagement from "@/components/ui/profile/user/my-stable-management";
 import MyFavorites from "@/components/ui/profile/user/favourites/my-favourites";
 import UserAddress from "@/components/ui/profile/user/addresses/user-address";
+import MyPaymentMethods from "@/components/ui/profile/user/my-payment-methods";
 
 
 const menuItems = [
@@ -19,8 +19,8 @@ const menuItems = [
     component: <MyOrders />
   },
   {
-    name: "Mi Establo", 
-    component: <MyStableManagement />
+    name: "Mis Métodos de Pago", 
+    component: <MyPaymentMethods />
   },
   {
     name: "Favoritos", 

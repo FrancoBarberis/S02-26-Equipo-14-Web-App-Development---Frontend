@@ -63,47 +63,62 @@ const PersonalInformation = () => {
             </button>
         </section>
 
-        {/* Stable */}
+        {/* Métodos de Pago */}
         <section className="mt-12">
-            <h3 className="text-xl font-serif text-[#002349] mb-6">
-            Mi Establo
+            <h3 className="text-xl font-serif text-[#002349] mb-6 border-b pb-2">
+                Métodos de Pago
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2].map((horse) => (
-                <div
-                    key={horse}
-                    className="bg-white border border-gray-200 overflow-hidden hover:shadow-md hover:scale-105 hover:cursor-pointer transition-all"
-                >
-                    <div className="h-40 bg-gray-200 relative">
-                        <Image
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-InSzZLNb4dQToOg8_oMOAQLrNmHLC0sYSebWoZdO5J5DT4IZFe_XEpbyHo1Rp0LEDIVhGEWRegVRVV6naeZxxKcjXHkeA60Ce_G9Roolf0GLLLEc6O_y7wsnrPIOryHx7867mlcit69gLfpETNS-aY1WY5K39e8PCVhX_7aLJEtfJJPwL9EvoBnooPP6YcAuGJdmZuCmCqjUzXW_Frt12ys1liGenD_HIYcnSpL7Fh6PmMm7lTOXFaN3H2SfoaYI6A2_AKjGjYE"
-                            alt="Caballo"
-                            fill
-                            className="object-cover"
-                        />
-                        <span className="absolute top-2 right-2 bg-[#C1A461] text-white text-[10px] px-2 py-1 uppercase font-bold">
-                        Pura Sangre
-                        </span>
-                    </div>
+                {[
+                    { last4: '4242', brand: 'Visa', exp: '12/25', primary: true },
+                    { last4: '8890', brand: 'Mastercard', exp: '09/24', primary: false }
+                ].map((card, idx) => (
+                    <div
+                        key={idx}
+                        className={`relative h-48 rounded-xl p-6 flex flex-col justify-between transition-all hover:scale-105 hover:cursor-pointer shadow-sm border ${
+                            card.primary 
+                            ? 'bg-[#002349] border-[#C1A461] text-white shadow-lg' 
+                            : 'bg-white border-gray-200 text-[#002349]'
+                        }`}
+                    >
+                        {card.primary && (
+                            <span className="absolute top-4 right-4 bg-[#C1A461] text-white text-[9px] px-2 py-1 uppercase font-bold tracking-widest">
+                                Principal
+                            </span>
+                        )}
+                        
+                        <div className="flex justify-between items-start mt-4">
+                            <div className="w-10 h-8 bg-[#C1A461]/20 rounded-md flex items-center justify-center">
+                                {/* Chip Icon Placeholder */}
+                                <div className="w-6 h-4 border border-[#C1A461] rounded-sm opacity-50"></div>
+                            </div>
+                            <span className="font-serif italic text-lg opacity-80">{card.brand}</span>
+                        </div>
 
-                    <div className="p-4">
-                        <h4 className="font-serif text-lg text-[#002349]">
-                        Noble Spirit
-                        </h4>
-                        <p className="text-sm text-gray-500 italic">
-                        Macho - 5 años
-                        </p>
+                        <div>
+                            <p className="tracking-[0.2em] text-sm mb-1">•••• •••• •••• {card.last4}</p>
+                            <div className="flex justify-between items-end">
+                                <div>
+                                    <p className="text-[10px] uppercase opacity-60 tracking-widest">Titular</p>
+                                    <p className="font-serif text-sm">Alejandro Domínguez</p>
+                                </div>
+                                <div className="text-right">
+                                    <p className="text-[10px] uppercase opacity-60 tracking-widest">Exp</p>
+                                    <p className="text-sm">{card.exp}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
 
-            <button className="border-2 border-dashed border-gray-300 flex flex-col items-center justify-center p-6 text-gray-400 hover:border-[#C1A461] hover:text-[#C1A461] hover:cursor-pointer hover:scale-105 transition-all">
-                <span className="text-3xl">+</span>
-                <span className="text-xs uppercase tracking-widest mt-2">
-                Añadir Caballo
-                </span>
-            </button>
+                {/* Botón Añadir Tarjeta */}
+                <button className="h-48 border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center text-gray-400 hover:border-[#C1A461] hover:text-[#C1A461] hover:cursor-pointer hover:scale-105 transition-all bg-white/50">
+                    <span className="text-3xl font-light">+</span>
+                    <span className="text-xs uppercase tracking-widest mt-2 font-semibold">
+                        Añadir Tarjeta
+                    </span>
+                </button>
             </div>
         </section>
         </div>
